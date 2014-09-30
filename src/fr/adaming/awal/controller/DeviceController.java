@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.adaming.awal.controller.implementation;
+package fr.adaming.awal.controller;
 
-import fr.adaming.awal.entity.Repairer;
+import fr.adaming.awal.entity.Device;
 
 /**
  *
  * @author INTI0227
  */
-public class ControllerRepairer extends Controller<Repairer>{
+public class DeviceController extends Controller<Device>{
 
-    public ControllerRepairer() {
-        super(Repairer.class);
+    public DeviceController() {
+        super(Device.class);
     }
     
 }

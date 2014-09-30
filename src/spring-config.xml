@@ -4,9 +4,9 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
-    <bean id ="dao" class="fr.adaming.awal.dao.generiq.Dao"/>
-    <bean id ="controller" class="fr.adaming.awal.controller.implementation.Controller">
-        <property name="dao"  ref="dao"/>
+    <bean id ="clientDao" class="fr.adaming.awal.dao.ClientDao"/>
+    <bean id ="ClientController" class="fr.adaming.awal.controller.ControllerClient">
+        <property name="dao"  ref="clientDao"/>
         
     </bean>
 </beans>

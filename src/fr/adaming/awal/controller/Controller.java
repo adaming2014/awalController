@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.adaming.awal.controller.implementation;
+package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IController;
 import fr.adaming.awal.dao.generiq.Dao;
@@ -16,8 +16,8 @@ import java.util.List;
  */
 public class Controller<T> implements IController<T>{
 
-    Class<T> entityclass;
-    Dao dao;
+    private Class<T> entityclass;
+    private Dao dao;
     public Controller(Class<T> entityclass) {
         this.entityclass = entityclass;
     }
@@ -52,6 +52,17 @@ public class Controller<T> implements IController<T>{
     @Override
     public T getById(int i) {
         return (T) dao.getById(i);
+    }
+
+    public Controller() {
+    }
+
+    public Dao getDao() {
+        return dao;
+    }
+
+    public void setDao(Dao dao) {
+        this.dao = dao;
     }
     
 }

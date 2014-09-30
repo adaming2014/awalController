@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.adaming.awal.controller.implementation;
+package fr.adaming.awal.controller;
 
-import fr.adaming.awal.entity.User;
+import fr.adaming.awal.entity.Admin;
 
 /**
  *
  * @author INTI0227
  */
-public class ControllerUser extends Controller<User>{
+public class AdminController extends Controller<Admin>{
 
-    public ControllerUser() {
-        super(User.class);
+    public AdminController() {
+        super(Admin.class);
     }
     
 }

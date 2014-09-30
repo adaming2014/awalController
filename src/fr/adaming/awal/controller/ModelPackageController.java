@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.adaming.awal.controller.implementation;
+package fr.adaming.awal.controller;
 
-import fr.adaming.awal.entity.Reseller;
+import fr.adaming.awal.entity.Modelpackage;
 
 /**
  *
  * @author INTI0227
  */
-public class ControllerReseller extends Controller<Reseller>{
+public class ModelPackageController extends Controller<Modelpackage>{
 
-    public ControllerReseller() {
-        super(Reseller.class);
+    public ModelPackageController() {
+        super(Modelpackage.class);
     }
     
 }
