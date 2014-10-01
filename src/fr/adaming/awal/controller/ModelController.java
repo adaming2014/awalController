@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IModelController;
+import fr.adaming.awal.dao.interfaces.IModelDao;
 import fr.adaming.awal.entity.Modele;
 
 /**
  *
  * @author INTI0227
  */
-public class ModelController extends Controller<Modele> implements IModelController {
+public class ModelController extends Controller<IModelDao, Modele> implements IModelController {
 
     public ModelController() {
         super(Modele.class);

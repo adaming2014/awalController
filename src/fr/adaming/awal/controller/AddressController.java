@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IAddressController;
+import fr.adaming.awal.dao.interfaces.IAddressDao;
 import fr.adaming.awal.entity.Address;
 
 /**
  *
  * @author INTI0227
  */
-public class AddressController extends Controller<Address> implements IAddressController {
+public class AddressController extends Controller<IAddressDao, Address> implements IAddressController {
 
     public AddressController() {
         super(Address.class);

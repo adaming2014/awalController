@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IDeviceInsuranceController;
+import fr.adaming.awal.dao.interfaces.IDeviceInsuranceDao;
 import fr.adaming.awal.entity.Deviceinsurance;
 
 /**
  *
  * @author INTI0227
  */
-public class DeviceInsuranceController extends Controller<Deviceinsurance> implements IDeviceInsuranceController {
+public class DeviceInsuranceController extends Controller<IDeviceInsuranceDao, Deviceinsurance> implements IDeviceInsuranceController {
 
     public DeviceInsuranceController() {
         super(Deviceinsurance.class);

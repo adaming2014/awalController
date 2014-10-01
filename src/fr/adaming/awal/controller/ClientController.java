@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IClientController;
+import fr.adaming.awal.dao.interfaces.IClientDao;
 import fr.adaming.awal.entity.Client;
 
 /**
  *
  * @author INTI0227
  */
-public class ClientController extends Controller<Client> implements IClientController {
+public class ClientController extends Controller<IClientDao, Client> implements IClientController {
 
     public ClientController() {
         super(Client.class);

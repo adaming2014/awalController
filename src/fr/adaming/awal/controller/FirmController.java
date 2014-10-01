@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IFirmController;
+import fr.adaming.awal.dao.interfaces.IFirmDao;
 import fr.adaming.awal.entity.Firm;
 
 /**
  *
  * @author INTI0227
  */
-public class FirmController extends Controller<Firm> implements IFirmController {
+public class FirmController extends Controller<IFirmDao, Firm> implements IFirmController {
 
     public FirmController() {
         super(Firm.class);

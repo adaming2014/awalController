@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IAdminController;
+import fr.adaming.awal.dao.interfaces.IAdminDao;
 import fr.adaming.awal.entity.Admin;
 
 /**
  *
  * @author INTI0227
  */
-public class AdminController extends Controller<Admin> implements IAdminController {
+public class AdminController extends Controller<IAdminDao, Admin> implements IAdminController {
 
     public AdminController() {
         super(Admin.class);

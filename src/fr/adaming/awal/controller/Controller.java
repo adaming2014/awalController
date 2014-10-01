@@ -12,11 +12,13 @@ import java.util.List;
 /**
  *
  * @author INTI0227
+ * @param <D>
+ * @param <T>
  */
-public class Controller<T> implements IController<T> {
+public class Controller<D extends IDao, T> implements IController<T> {
 
     private Class<T> entityclass;
-    private IDao dao;
+    protected D dao;
 
     public Controller(Class<T> entityclass) {
         this.entityclass = entityclass;
@@ -56,11 +58,11 @@ public class Controller<T> implements IController<T> {
     public Controller() {
     }
 
-    public IDao getDao() {
+    public D getDao() {
         return dao;
     }
 
-    public void setDao(IDao dao) {
+    public void setDao(D dao) {
         this.dao = dao;
     }
 

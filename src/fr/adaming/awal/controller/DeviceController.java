@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IDeviceController;
+import fr.adaming.awal.dao.interfaces.IDeviceDao;
 import fr.adaming.awal.entity.Device;
 
 /**
  *
  * @author INTI0227
  */
-public class DeviceController extends Controller<Device> implements IDeviceController {
+public class DeviceController extends Controller<IDeviceDao, Device> implements IDeviceController {
 
     public DeviceController() {
         super(Device.class);

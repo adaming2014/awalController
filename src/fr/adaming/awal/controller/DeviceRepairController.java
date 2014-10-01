@@ -6,13 +6,14 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IDeviceRepairController;
+import fr.adaming.awal.dao.interfaces.IDeviceRepairDao;
 import fr.adaming.awal.entity.Devicerepair;
 
 /**
  *
  * @author INTI0227
  */
-public class DeviceRepairController extends Controller<Devicerepair> implements IDeviceRepairController {
+public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicerepair> implements IDeviceRepairController {
 
     public DeviceRepairController() {
         super(Devicerepair.class);
