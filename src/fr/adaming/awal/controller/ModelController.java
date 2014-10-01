@@ -5,16 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
+import fr.adaming.awal.controller.interfaces.IModelController;
 import fr.adaming.awal.entity.Modele;
 
 /**
  *
  * @author INTI0227
  */
-public class ModelController extends Controller<Modele>{
+public class ModelController extends Controller<Modele> implements IModelController {
 
     public ModelController() {
         super(Modele.class);
     }
-    
 }

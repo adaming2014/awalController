@@ -5,16 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
+import fr.adaming.awal.controller.interfaces.IResellerController;
 import fr.adaming.awal.entity.Reseller;
 
 /**
  *
  * @author INTI0227
  */
-public class ResellerController extends Controller<Reseller>{
+public class ResellerController extends Controller<Reseller> implements IResellerController {
 
     public ResellerController() {
         super(Reseller.class);
     }
-    
 }

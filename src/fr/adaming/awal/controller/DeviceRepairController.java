@@ -5,16 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
+import fr.adaming.awal.controller.interfaces.IDeviceRepairController;
 import fr.adaming.awal.entity.Devicerepair;
 
 /**
  *
  * @author INTI0227
  */
-public class DeviceRepairController extends Controller<Devicerepair>{
+public class DeviceRepairController extends Controller<Devicerepair> implements IDeviceRepairController {
 
     public DeviceRepairController() {
         super(Devicerepair.class);
     }
-    
 }

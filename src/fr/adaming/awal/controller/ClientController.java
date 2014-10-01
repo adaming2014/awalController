@@ -5,18 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
-
+import fr.adaming.awal.controller.interfaces.IClientController;
 import fr.adaming.awal.entity.Client;
-import java.util.List;
 
 /**
  *
  * @author INTI0227
  */
-public class ClientController extends Controller<Client>{
+public class ClientController extends Controller<Client> implements IClientController {
 
     public ClientController() {
         super(Client.class);
     }
-
 }

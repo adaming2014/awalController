@@ -5,16 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
+import fr.adaming.awal.controller.interfaces.IDeviceInsuranceController;
 import fr.adaming.awal.entity.Deviceinsurance;
 
 /**
  *
  * @author INTI0227
  */
-public class DeviceInsuranceController extends Controller<Deviceinsurance>{
+public class DeviceInsuranceController extends Controller<Deviceinsurance> implements IDeviceInsuranceController {
 
     public DeviceInsuranceController() {
         super(Deviceinsurance.class);
     }
-    
 }

@@ -5,16 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
+import fr.adaming.awal.controller.interfaces.IUserController;
 import fr.adaming.awal.entity.User;
 
 /**
  *
  * @author INTI0227
  */
-public class UserController extends Controller<User>{
+public class UserController extends Controller<User> implements IUserController {
 
     public UserController() {
         super(User.class);
     }
-    
 }

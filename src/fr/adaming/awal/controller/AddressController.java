@@ -5,14 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
+import fr.adaming.awal.controller.interfaces.IAddressController;
 import fr.adaming.awal.entity.Address;
 
 /**
  *
  * @author INTI0227
  */
-public class AddressController extends Controller<Address>{
-    public AddressController(){
+public class AddressController extends Controller<Address> implements IAddressController {
+
+    public AddressController() {
         super(Address.class);
     }
 }

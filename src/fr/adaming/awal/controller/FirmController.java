@@ -5,16 +5,16 @@
  */
 package fr.adaming.awal.controller;
 
+import fr.adaming.awal.controller.interfaces.IFirmController;
 import fr.adaming.awal.entity.Firm;
 
 /**
  *
  * @author INTI0227
  */
-public class FirmController extends Controller<Firm>{
+public class FirmController extends Controller<Firm> implements IFirmController {
 
     public FirmController() {
         super(Firm.class);
     }
-    
 }
