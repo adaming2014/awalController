@@ -6,7 +6,6 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IController;
-import fr.adaming.awal.dao.generiq.Dao;
 import fr.adaming.awal.dao.interfaces.IDao;
 import java.util.List;
 
@@ -14,19 +13,19 @@ import java.util.List;
  *
  * @author INTI0227
  */
-public class Controller<T> implements IController<T>{
+public class Controller<T> implements IController<T> {
 
     private Class<T> entityclass;
-    private Dao dao;
+    private IDao dao;
+
     public Controller(Class<T> entityclass) {
         this.entityclass = entityclass;
     }
 
-    
     @Override
     public List<T> getAll() {
         return dao.getAll();
-        
+
     }
 
     @Override
@@ -41,7 +40,7 @@ public class Controller<T> implements IController<T>{
 
     @Override
     public boolean delete(T t) {
-         return dao.delete(t);
+        return dao.delete(t);
     }
 
     @Override
@@ -57,12 +56,12 @@ public class Controller<T> implements IController<T>{
     public Controller() {
     }
 
-    public Dao getDao() {
+    public IDao getDao() {
         return dao;
     }
 
-    public void setDao(Dao dao) {
+    public void setDao(IDao dao) {
         this.dao = dao;
     }
-    
+
 }
