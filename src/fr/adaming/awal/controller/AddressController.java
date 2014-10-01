@@ -5,18 +5,14 @@
  */
 package fr.adaming.awal.controller;
 
-
-import fr.adaming.awal.entity.Client;
-import java.util.List;
+import fr.adaming.awal.entity.Address;
 
 /**
  *
  * @author INTI0227
  */
-public class ClientController extends Controller<Client>{
-
-    public ClientController() {
-        super(Client.class);
+public class AddressController extends Controller<Address>{
+    public AddressController(){
+        super(Address.class);
     }
-
 }

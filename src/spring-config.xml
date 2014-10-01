@@ -51,7 +51,7 @@
         <property name="dao" ref="userDao" />
     </bean>
     <bean id="addressDao" class="fr.adaming.awal.dao.AddressDao"/>
-    <bean id="addressController" class="fr.adaming.awal.controller.AdressController">
+    <bean id="addressController" class="fr.adaming.awal.controller.AddressController">
         <property name="dao" ref="addressDao" />
     </bean>
     
