@@ -6,7 +6,6 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IClientController;
-import fr.adaming.awal.dao.ClientDao;
 import fr.adaming.awal.dao.interfaces.IClientDao;
 import fr.adaming.awal.entity.Client;
 
