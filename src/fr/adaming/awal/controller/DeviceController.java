@@ -7,7 +7,9 @@ package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IDeviceController;
 import fr.adaming.awal.dao.interfaces.IDeviceDao;
+import fr.adaming.awal.entity.Client;
 import fr.adaming.awal.entity.Device;
+import java.util.List;
 
 /**
  *
@@ -17,5 +19,10 @@ public class DeviceController extends Controller<IDeviceDao, Device> implements 
 
     public DeviceController() {
         super(Device.class);
+    }
+
+    @Override
+    public List<Device> getDevicesByClient(Client client) {
+        return dao.getDevicesByClient(client);
     }
 }

@@ -6,6 +6,7 @@
 package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IClientController;
+import fr.adaming.awal.dao.ClientDao;
 import fr.adaming.awal.dao.interfaces.IClientDao;
 import fr.adaming.awal.entity.Client;
 
@@ -17,5 +18,10 @@ public class ClientController extends Controller<IClientDao, Client> implements 
 
     public ClientController() {
         super(Client.class);
+    }
+
+    @Override
+    public Client getClientByMail(String mail) {
+        return dao.getClientByMail(mail);
     }
 }
