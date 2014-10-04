@@ -7,7 +7,9 @@ package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IModelPackageController;
 import fr.adaming.awal.dao.interfaces.IModelPackageDao;
+import fr.adaming.awal.entity.Modele;
 import fr.adaming.awal.entity.Modelpackage;
+import java.util.List;
 
 /**
  *
@@ -17,5 +19,10 @@ public class ModelPackageController extends Controller<IModelPackageDao, Modelpa
 
     public ModelPackageController() {
         super(Modelpackage.class);
+    }
+
+    @Override
+    public List<Modelpackage> getPackagesByModel(Modele model) {
+        return dao.getPackagesByModel(model);
     }
 }
