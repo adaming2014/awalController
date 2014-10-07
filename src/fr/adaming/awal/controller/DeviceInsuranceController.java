@@ -7,7 +7,9 @@ package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IDeviceInsuranceController;
 import fr.adaming.awal.dao.interfaces.IDeviceInsuranceDao;
+import fr.adaming.awal.entity.Device;
 import fr.adaming.awal.entity.Deviceinsurance;
+import java.util.List;
 
 /**
  *
@@ -17,5 +19,10 @@ public class DeviceInsuranceController extends Controller<IDeviceInsuranceDao, D
 
     public DeviceInsuranceController() {
         super(Deviceinsurance.class);
+    }
+
+    @Override
+    public List<Deviceinsurance> getDevicesInsuranceByClient(Device device) {
+        return dao.getDevicesInsuranceByClient(device);
     }
 }
