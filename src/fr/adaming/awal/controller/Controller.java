@@ -19,53 +19,54 @@ import java.util.List;
  * @param <I>
  */
 public class Controller<D extends IDao<T, I>, T extends IEntity<I>, I extends Serializable> implements IController<T, I> {
-
+    
     protected D dao;
-
+    
     @Override
     public List<T> getAll() {
         return dao.getAll();
-
+        
     }
-
+    
     @Override
     public boolean create(T t) {
+        t.setId(null);
         dao.makePersistent(t);
         return true;
     }
-
+    
     @Override
     public boolean update(T t) {
         dao.makePersistent(t);
         return true;
     }
-
+    
     @Override
     public boolean delete(T t) {
         dao.makeTransient(t);
         return true;
     }
-
+    
     @Override
     public boolean delete(I i) {
         dao.makeTransient(dao.getById(i));
         return true;
     }
-
+    
     @Override
     public T getById(I i) {
         return dao.getById(i);
     }
-
+    
     public Controller() {
     }
-
+    
     public D getDao() {
         return dao;
     }
-
+    
     public void setDao(D dao) {
         this.dao = dao;
     }
-
+    
 }
