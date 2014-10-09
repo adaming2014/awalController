@@ -15,13 +15,9 @@ import java.util.List;
  *
  * @author INTI0227
  */
-public class DeviceinsurancemodelController 
-extends Controller<IDeviceInsuranceModeleDao, Deviceinsurancemodel>
-implements IDeviceinsurancemodelController{
-    
-    public DeviceinsurancemodelController(){
-        super(Deviceinsurancemodel.class);
-    }
+public class DeviceinsurancemodelController
+        extends Controller<IDeviceInsuranceModeleDao, Deviceinsurancemodel, Integer>
+        implements IDeviceinsurancemodelController {
 
     @Override
     public List<Deviceinsurancemodel> getDeviceInsuranceModelsByModel(Modele modele) {

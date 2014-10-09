@@ -13,11 +13,7 @@ import fr.adaming.awal.entity.Client;
  *
  * @author INTI0227
  */
-public class ClientController extends Controller<IClientDao, Client> implements IClientController {
-
-    public ClientController() {
-        super(Client.class);
-    }
+public class ClientController extends Controller<IClientDao, Client, Integer> implements IClientController {
 
     @Override
     public Client getClientByMail(String mail) {

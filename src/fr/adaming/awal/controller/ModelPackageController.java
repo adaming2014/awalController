@@ -15,11 +15,7 @@ import java.util.List;
  *
  * @author INTI0227
  */
-public class ModelPackageController extends Controller<IModelPackageDao, Modelpackage> implements IModelPackageController {
-
-    public ModelPackageController() {
-        super(Modelpackage.class);
-    }
+public class ModelPackageController extends Controller<IModelPackageDao, Modelpackage, Integer> implements IModelPackageController {
 
     @Override
     public List<Modelpackage> getPackagesByModel(Modele model) {

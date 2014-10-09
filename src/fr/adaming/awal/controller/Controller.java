@@ -7,6 +7,8 @@ package fr.adaming.awal.controller;
 
 import fr.adaming.awal.controller.interfaces.IController;
 import fr.adaming.awal.dao.interfaces.IDao;
+import fr.adaming.awal.entity.interfaces.IEntity;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,15 +16,11 @@ import java.util.List;
  * @author INTI0227
  * @param <D>
  * @param <T>
+ * @param <I>
  */
-public class Controller<D extends IDao, T> implements IController<T> {
+public class Controller<D extends IDao<T, I>, T extends IEntity<I>, I extends Serializable> implements IController<T, I> {
 
-    private Class<T> entityclass;
     protected D dao;
-
-    public Controller(Class<T> entityclass) {
-        this.entityclass = entityclass;
-    }
 
     @Override
     public List<T> getAll() {
@@ -32,27 +30,31 @@ public class Controller<D extends IDao, T> implements IController<T> {
 
     @Override
     public boolean create(T t) {
-        return dao.create(t);
+        dao.makePersistent(t);
+        return true;
     }
 
     @Override
     public boolean update(T t) {
-        return dao.update(t);
+        dao.makePersistent(t);
+        return true;
     }
 
     @Override
     public boolean delete(T t) {
-        return dao.delete(t);
+        dao.makeTransient(t);
+        return true;
     }
 
     @Override
-    public boolean delete(int i) {
-        return dao.delete(i);
+    public boolean delete(I i) {
+        dao.makeTransient(dao.getById(i));
+        return true;
     }
 
     @Override
-    public T getById(int i) {
-        return (T) dao.getById(i);
+    public T getById(I i) {
+        return dao.getById(i);
     }
 
     public Controller() {

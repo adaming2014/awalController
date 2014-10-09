@@ -13,9 +13,6 @@ import fr.adaming.awal.entity.Firm;
  *
  * @author INTI0227
  */
-public class FirmController extends Controller<IFirmDao, Firm> implements IFirmController {
+public class FirmController extends Controller<IFirmDao, Firm, Integer> implements IFirmController {
 
-    public FirmController() {
-        super(Firm.class);
-    }
 }

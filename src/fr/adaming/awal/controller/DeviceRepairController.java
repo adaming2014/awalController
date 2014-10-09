@@ -15,11 +15,7 @@ import java.util.List;
  *
  * @author INTI0227
  */
-public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicerepair> implements IDeviceRepairController {
-
-    public DeviceRepairController() {
-        super(Devicerepair.class);
-    }
+public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicerepair, Integer> implements IDeviceRepairController {
 
     @Override
     public List<Devicerepair> getDevicesRepairByClient(Client client) {

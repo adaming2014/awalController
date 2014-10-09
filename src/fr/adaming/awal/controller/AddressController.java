@@ -13,9 +13,6 @@ import fr.adaming.awal.entity.Address;
  *
  * @author INTI0227
  */
-public class AddressController extends Controller<IAddressDao, Address> implements IAddressController {
+public class AddressController extends Controller<IAddressDao, Address, Integer> implements IAddressController {
 
-    public AddressController() {
-        super(Address.class);
-    }
 }

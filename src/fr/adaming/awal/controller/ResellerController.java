@@ -13,9 +13,6 @@ import fr.adaming.awal.entity.Reseller;
  *
  * @author INTI0227
  */
-public class ResellerController extends Controller<IResellerDao, Reseller> implements IResellerController {
+public class ResellerController extends Controller<IResellerDao, Reseller, Integer> implements IResellerController {
 
-    public ResellerController() {
-        super(Reseller.class);
-    }
 }

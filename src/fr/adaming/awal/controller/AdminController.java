@@ -13,9 +13,6 @@ import fr.adaming.awal.entity.Admin;
  *
  * @author INTI0227
  */
-public class AdminController extends Controller<IAdminDao, Admin> implements IAdminController {
+public class AdminController extends Controller<IAdminDao, Admin, Integer> implements IAdminController {
 
-    public AdminController() {
-        super(Admin.class);
-    }
 }

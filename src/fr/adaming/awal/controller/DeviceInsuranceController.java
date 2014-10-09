@@ -15,11 +15,7 @@ import java.util.List;
  *
  * @author INTI0227
  */
-public class DeviceInsuranceController extends Controller<IDeviceInsuranceDao, Deviceinsurance> implements IDeviceInsuranceController {
-
-    public DeviceInsuranceController() {
-        super(Deviceinsurance.class);
-    }
+public class DeviceInsuranceController extends Controller<IDeviceInsuranceDao, Deviceinsurance, Integer> implements IDeviceInsuranceController {
 
     @Override
     public List<Deviceinsurance> getDevicesInsuranceByClient(Client client) {

@@ -15,11 +15,7 @@ import java.util.List;
  *
  * @author INTI0227
  */
-public class DeviceController extends Controller<IDeviceDao, Device> implements IDeviceController {
-
-    public DeviceController() {
-        super(Device.class);
-    }
+public class DeviceController extends Controller<IDeviceDao, Device, Integer> implements IDeviceController {
 
     @Override
     public List<Device> getDevicesByClient(Client client) {

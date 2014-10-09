@@ -13,9 +13,6 @@ import fr.adaming.awal.entity.Repairer;
  *
  * @author INTI0227
  */
-public class RepairerController extends Controller<IRepairerDao, Repairer> implements IRepairerController {
+public class RepairerController extends Controller<IRepairerDao, Repairer, Integer> implements IRepairerController {
 
-    public RepairerController() {
-        super(Repairer.class);
-    }
 }

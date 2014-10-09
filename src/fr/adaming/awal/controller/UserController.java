@@ -13,11 +13,7 @@ import fr.adaming.awal.entity.User;
  *
  * @author INTI0227
  */
-public class UserController extends Controller<IUserDao, User> implements IUserController {
-
-    public UserController() {
-        super(User.class);
-    }
+public class UserController extends Controller<IUserDao, User, Integer> implements IUserController {
 
     @Override
     public User getByEmail(String email) {

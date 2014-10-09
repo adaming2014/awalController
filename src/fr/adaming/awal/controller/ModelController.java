@@ -13,9 +13,6 @@ import fr.adaming.awal.entity.Modele;
  *
  * @author INTI0227
  */
-public class ModelController extends Controller<IModelDao, Modele> implements IModelController {
+public class ModelController extends Controller<IModelDao, Modele, Integer> implements IModelController {
 
-    public ModelController() {
-        super(Modele.class);
-    }
 }
