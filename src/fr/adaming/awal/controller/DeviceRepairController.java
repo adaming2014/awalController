@@ -13,7 +13,6 @@ import fr.adaming.awal.entity.Client;
 import fr.adaming.awal.entity.Device;
 import fr.adaming.awal.entity.Deviceinsurance;
 import fr.adaming.awal.entity.Devicerepair;
-import fr.adaming.awal.entity.Modelpackage;
 import fr.adaming.awal.entity.Repairer;
 import fr.adaming.awal.util.DeviceRepairerUtil;
 import fr.adaming.awal.util.RepairerUtil;
@@ -59,6 +58,16 @@ public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicer
             if (repairerTmp.getAvailable().equals(RepairerUtil.AVAILABLE)) {
                 if (repairerTmp.getFirm().getAddress().getPostcode().equals(entity.getDevice().getClient().getAddress().getPostcode())) {
                     repairer = repairerTmp;
+                    break;
+                }
+            }
+        }
+
+        if (repairer == null) {
+            for (Repairer repairer2 : repairerDao.getAll()) {
+                if (repairer2.getAvailable().equals(RepairerUtil.AVAILABLE)) {
+                    repairer = repairer2;
+                    break;
                 }
             }
         }
