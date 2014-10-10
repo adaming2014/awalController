@@ -37,6 +37,11 @@ public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicer
     }
 
     @Override
+    public List<Devicerepair> getDevicesRepairByRepairer(final Repairer repairer) {
+        return dao.getDevicesRepairByRepairer(repairer);
+    }
+
+    @Override
     public boolean create(Devicerepair t) {
         throw new RuntimeException("Don't use that method, use createDeviceRepair instead");
     }
