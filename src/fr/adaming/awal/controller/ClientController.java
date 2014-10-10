@@ -8,6 +8,8 @@ package fr.adaming.awal.controller;
 import fr.adaming.awal.controller.interfaces.IClientController;
 import fr.adaming.awal.dao.interfaces.IClientDao;
 import fr.adaming.awal.entity.Client;
+import fr.adaming.awal.entity.Firm;
+import java.util.List;
 
 /**
  *
@@ -18,5 +20,10 @@ public class ClientController extends Controller<IClientDao, Client, Integer> im
     @Override
     public Client getClientByMail(String mail) {
         return dao.getClientByMail(mail);
+    }
+
+    @Override
+    public List<Client> getClientsByFirm(Firm firm) {
+        return dao.getClientsByFirm(firm);
     }
 }
