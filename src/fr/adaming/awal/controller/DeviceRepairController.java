@@ -8,7 +8,9 @@ package fr.adaming.awal.controller;
 import fr.adaming.awal.controller.interfaces.IDeviceRepairController;
 import fr.adaming.awal.dao.interfaces.IDeviceRepairDao;
 import fr.adaming.awal.entity.Client;
+import fr.adaming.awal.entity.Device;
 import fr.adaming.awal.entity.Devicerepair;
+import fr.adaming.awal.entity.Modelpackage;
 import java.util.List;
 
 /**
@@ -18,7 +20,12 @@ import java.util.List;
 public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicerepair, Integer> implements IDeviceRepairController {
 
     @Override
-    public List<Devicerepair> getDevicesRepairByClient(Client client) {
+    public List<Devicerepair> getDevicesRepairByClient(final Client client) {
         return dao.getDevicesRepairByClient(client);
+    }
+
+    @Override
+    public Devicerepair getByDeviceAndPackage(final Device device, final Modelpackage modelPackage) {
+        return dao.getByDeviceAndPackage(device, modelPackage);
     }
 }
