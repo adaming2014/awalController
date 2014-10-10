@@ -5,8 +5,9 @@
  */
 package fr.adaming.awal.controller;
 
-import fr.adaming.awal.controller.interfaces.IClientController;
+
 import fr.adaming.awal.controller.interfaces.IUserController;
+
 import fr.adaming.awal.dao.interfaces.IAdminDao;
 import fr.adaming.awal.dao.interfaces.IClientDao;
 import fr.adaming.awal.dao.interfaces.IRepairerDao;
@@ -24,11 +25,12 @@ import fr.adaming.awal.entity.interfaces.IUser;
  * @author INTI0227
  */
 public class UserController extends Controller<IUserDao, User, Integer> implements IUserController {
-    IClientDao clientDao;
-    IRepairerDao repairerDao;
-    IResellerDao resellerDao;
-    IAdminDao adminDao;
-            
+
+    protected IClientDao clientDao;
+    protected IRepairerDao repairerDao;
+    protected IResellerDao resellerDao;
+    protected IAdminDao adminDao;
+
     @Override
     public User getByEmail(String email) {
         return dao.getByEmail(email);
@@ -36,21 +38,60 @@ public class UserController extends Controller<IUserDao, User, Integer> implemen
 
     @Override
     public IUser getUserTypeByUserId(Integer id) {
-        
         Client client = clientDao.getClientByUserId(id);
-        Repairer repairer = repairerDao.getRepairerByUserId(id);
-        Reseller reseller = resellerDao.getResellerByUSerId(id);
-        Admin admin = adminDao.getAdminByUserId(id);
-        if(null != client)
+        if (null != client) {
             return client;
-        if(null != admin)
+        }
+
+        Admin admin = adminDao.getAdminByUserId(id);
+        if (null != admin) {
             return admin;
-        if(null!=repairer)
+        }
+
+        Repairer repairer = repairerDao.getRepairerByUserId(id);
+        if (null != repairer) {
             return repairer;
-        if(null!=reseller)
+        }
+
+        Reseller reseller = resellerDao.getResellerByUSerId(id);
+        if (null != reseller) {
             return reseller;
-        return null;  
-    
+        }
+
+        return null;
+    }
+
+    public IClientDao getClientDao() {
+        return  clientDao;
+    }
+
+    public void setClientDao(IClientDao clientDao) {
+        this.clientDao = clientDao;
+    }
+
+    public IRepairerDao getRepairerDao() {
+        return repairerDao;
+    }
+
+    public void setRepairerDao(IRepairerDao repairerDao) {
+        this.repairerDao = repairerDao;
+    }
+
+    public IResellerDao getResellerDao() {
+        return resellerDao;
+    }
+
+    public void setResellerDao(IResellerDao resellerDao) {
+        this.resellerDao = resellerDao;
+    }
+
+    public IAdminDao getAdminDao() {
+        return adminDao;
+    }
+
+    public void setAdminDao(IAdminDao adminDao) {
+        this.adminDao = adminDao;
     }
     
+
 }
