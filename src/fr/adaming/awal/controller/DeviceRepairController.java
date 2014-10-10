@@ -53,20 +53,14 @@ public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicer
             throw new IDeviceRepairController.PackageAlreadyPresentException();
         }
 
-        Repairer repairer = null;
+        Repairer repairerChoice1 = null;
+        Repairer repairerChoice2 = null;
         for (Repairer repairerTmp : repairerDao.getAll()) {
             if (repairerTmp.getAvailable().equals(RepairerUtil.AVAILABLE)) {
-                if (repairerTmp.getFirm().getAddress().getPostcode().equals(entity.getDevice().getClient().getAddress().getPostcode())) {
-                    repairer = repairerTmp;
-                    break;
-                }
-            }
-        }
+                repairerChoice2 = repairerTmp;
 
-        if (repairer == null) {
-            for (Repairer repairer2 : repairerDao.getAll()) {
-                if (repairer2.getAvailable().equals(RepairerUtil.AVAILABLE)) {
-                    repairer = repairer2;
+                if (repairerTmp.getFirm().getAddress().getPostcode().equals(entity.getDevice().getClient().getAddress().getPostcode())) {
+                    repairerChoice1 = repairerTmp;
                     break;
                 }
             }
@@ -78,7 +72,7 @@ public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicer
             entity.setPrice(Integer.valueOf(entity.getModelpackage().getPrice()));
         }
 
-        entity.setRepairer(repairer);
+        entity.setRepairer(repairerChoice1 != null ? repairerChoice1 : repairerChoice2);
         entity.setState(DeviceRepairerUtil.STATE_CREATE);
         entity.setDateCreation(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
 
