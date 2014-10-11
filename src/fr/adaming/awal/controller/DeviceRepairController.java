@@ -107,6 +107,30 @@ public class DeviceRepairController extends Controller<IDeviceRepairDao, Devicer
         return insurance;
     }
 
+    @Override
+    public void setRepairingState(Devicerepair devicerepair) {
+        devicerepair.setState(DeviceRepairerUtil.STATE_REPAIRING);
+        devicerepair.setDateInRepair(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+
+        dao.makePersistent(devicerepair);
+    }
+
+    @Override
+    public void setRepairedState(Devicerepair devicerepair) {
+        devicerepair.setState(DeviceRepairerUtil.STATE_REPAIRED);
+        devicerepair.setDateRepair(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+
+        dao.makePersistent(devicerepair);
+    }
+
+    @Override
+    public void setClosedState(Devicerepair devicerepair) {
+        devicerepair.setState(DeviceRepairerUtil.STATE_CLOSED);
+        devicerepair.setDateClosed(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+
+        dao.makePersistent(devicerepair);
+    }
+
     public IRepairerDao getRepairerDao() {
         return repairerDao;
     }
